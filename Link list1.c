@@ -1,11 +1,15 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<conio.h>
+//node having data part and pointer
 struct Node
 {
     int info;
     struct Node *link;
 };
 struct Node *START=NULL;
+
+//This function which is used to insert a new node at the starting of the linked list
 void insertAsFirstNode()
 {
     struct Node *n;
@@ -20,6 +24,8 @@ void insertAsFirstNode()
         START=n;
     }
 }
+
+//This function which is used to insert a new node at the last of the linked list
 void insertAsLastNode()
 {
     struct Node *n,*t;
@@ -36,6 +42,8 @@ void insertAsLastNode()
         t->link=n;
     }
 }
+
+//This function which is used to insert a new node just after a given node of the linked list
 void insertAfterSomeNode(int X)
 {
     int flag=0;
@@ -60,6 +68,8 @@ void insertAfterSomeNode(int X)
             printf("Data do not match with any data");
     }
 }
+
+//This function which is used to insert a new node just before a given node of the linked list
 void insertBeforeNode(int X)
 {
     int flag=1;
@@ -89,6 +99,8 @@ void insertBeforeNode(int X)
             printf("Data Not Found");
     }
 }
+
+//This function which is used to delete first node of the linked list
 void deleteFirstNode()
 {
     struct Node *r;
@@ -100,6 +112,8 @@ void deleteFirstNode()
         free(r);
     }
 }
+
+//This function which is used to delete the last node of the linked list
 void deleteLastNode()
 {
     struct Node *r,*t;
@@ -116,6 +130,8 @@ void deleteLastNode()
         free(t);
     }
 }
+
+//This function which is used to delete a paticular node of the linked list
 void deleteGivenNode(int X)
 {
     int flag=1;
@@ -143,6 +159,8 @@ void deleteGivenNode(int X)
             printf("Data not found in the list");
     }
 }
+
+//This function which is used to delete a node just after a given node of the linked list
 void deleteAfterGivenNode(int X)
 {
     int flag=1;
@@ -169,6 +187,8 @@ void deleteAfterGivenNode(int X)
             printf("Given Reference not found");
     }
 }
+
+//This function which is used to delete a node just before a given node of the linked list
 void deleteBeforeGivenNode(int X)
 {
     int flag=1;
@@ -197,6 +217,8 @@ void deleteBeforeGivenNode(int X)
             printf("Given reference data is not found");
     }
 }
+
+//This function which is used to print all the data part of the linked list(starting from the start)
 void traverse()
 {
     struct Node *t;
@@ -210,6 +232,8 @@ void traverse()
         }
     }
 }
+
+//This is menu driven function just to give code more modularity and easy to understand 
 int menu()
 {
     int ch;
@@ -228,6 +252,8 @@ int menu()
     scanf("%d",&ch);
     return(ch);
 }
+
+//This is our main function
 main()
 {
     int N;
